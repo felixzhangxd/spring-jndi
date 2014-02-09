@@ -1,0 +1,31 @@
+1. tomcat 全局resource
+	${TOMCAT_HOME}/conf/context.xml
+
+2. tomcat 全局resource
+	1). ${TOMCAT_HOME}/conf/server.xml的<GlobalNamingResources>节点中增加
+	2). ${TOMCAT_HOME}/conf/context.xml日<Context>节点中增加
+		<ResourceLink name="jdbc/spring_jndi" type="javax.sql.DataSource" global="jdbc/spring_jndi"/>
+
+3. tomcat 局部resource
+	${TOMCAT_HOME}/conf/server.xml的<Engine>节点中增加
+	<Host name="jndi.ezcom.biz" debug="0" appBase="/home/felix/spring-jndi" unpackWARs="true" autoDeploy="true" xmlValidation="false" xmlNamespaceAware="false">
+	    <Context path="" docBase="/home/felix/spring-jndi" debug="0" reloadable="true" crossContext="true">
+	        <Resource name="jdbc/spring_jndi" auth="Container" type="javax.sql.DataSource" maxActive="10" maxIdle="5" maxWait="-1"
+	              removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"
+	              username="jndi" password="jndi" driverClassName="com.mysql.jdbc.Driver"
+	              url="jdbc:mysql://127.0.0.1:3306/spring_jndi?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true">
+	        </Resource>
+	    </Context>
+	</Host>
+
+4. tomcat 局部resource
+	1). ${WEB_APP}/META-INF/context.xml
+		<?xml version="1.0" encoding="UTF-8"?>
+		<Context>
+		    <Resource name="jdbc/spring_jndi" auth="Container" type="javax.sql.DataSource" maxActive="10" maxIdle="5" maxWait="-1"
+		          removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"
+		          username="jndi" password="jndi" driverClassName="com.mysql.jdbc.Driver"
+		          url="jdbc:mysql://127.0.0.1:3306/spring_jndi?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true">
+		    </Resource>
+		</Context>
+	2). 部署时必需要有context path,访问时jndi.ezcom.biz:8080/${context_path}/
