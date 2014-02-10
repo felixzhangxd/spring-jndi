@@ -12,7 +12,7 @@
 	    <Context path="" docBase="/home/felix/spring-jndi" debug="0" reloadable="true" crossContext="true">
 	        <Resource name="jdbc/spring_jndi" auth="Container" type="javax.sql.DataSource" maxActive="10" maxIdle="5" maxWait="-1"
 	              removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"
-	              username="jndi" password="jndi" driverClassName="com.mysql.jdbc.Driver"
+	              username="spring_jndi" password="spring_jndi" driverClassName="com.mysql.jdbc.Driver"
 	              url="jdbc:mysql://127.0.0.1:3306/spring_jndi?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true">
 	        </Resource>
 	    </Context>
@@ -24,7 +24,7 @@
 		<Context>
 		    <Resource name="jdbc/spring_jndi" auth="Container" type="javax.sql.DataSource" maxActive="10" maxIdle="5" maxWait="-1"
 		          removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"
-		          username="jndi" password="jndi" driverClassName="com.mysql.jdbc.Driver"
+		          username="spring_jndi" password="spring_jndi" driverClassName="com.mysql.jdbc.Driver"
 		          url="jdbc:mysql://127.0.0.1:3306/spring_jndi?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true">
 		    </Resource>
 		</Context>

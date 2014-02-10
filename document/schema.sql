@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 PRIMARY KEY(id))
 ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-GRANT ALL ON spring_jndi.* TO 'jndi'@'127.0.0.1' IDENTIFIED BY 'jndi';
+GRANT ALL ON spring_jndi.* TO 'spring_jndi'@'127.0.0.1' IDENTIFIED BY 'spring_jndi';

@@ -18,7 +18,7 @@
 <Resource name="jdbc/spring_jndi" auth="Container" type="javax.sql.DataSource" 
 	initialSize="3" maxActive="10" maxIdle="5" minIdle="3" maxWait="-1"
 	removeAbandoned="true" removeAbandonedTimeout="300" logAbandoned="true"
-	username="jndi" password="jndi" driverClassName="com.mysql.jdbc.Driver"
+	username="spring_jndi" password="spring_jndi" driverClassName="com.mysql.jdbc.Driver"
 	url="jdbc:mysql://127.0.0.1:3306/spring_jndi?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true">
 </Resource>
 
@@ -27,6 +27,6 @@
 	initialPoolSize="3" maxPoolSize="10" minPoolSize="10" acquireIncrement="2"
 	maxIdleTime="60" autoCommitOnClose="true" checkoutTimeout="0"
 	factory="org.apache.naming.factory.BeanFactory"
-	user="jndi" password="jndi" driverClass="com.mysql.jdbc.Driver"
+	user="spring_jndi" password="spring_jndi" driverClass="com.mysql.jdbc.Driver"
 	jdbcUrl="jdbc:mysql://127.0.0.1:3306/spring_jndi?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true">
 </Resource>
